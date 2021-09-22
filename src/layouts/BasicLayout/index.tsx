@@ -111,7 +111,6 @@ const BasicLayout = (props: any) => {
 					//      {/*menu 菜单的头部点击事件*/}
 				}}
 				rightContentRender={() => (<RightLayout/>)}
-				links={null}
 			>
 				<RouteWithModuleRoutes routers={router}/>
 			</ProLayout>
