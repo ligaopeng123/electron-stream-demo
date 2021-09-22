@@ -13,3 +13,11 @@ $scrollbar-background: #141414;
 $UI-FONT-FAMILY-HELVETICA: "Helvetica"; // 数字或者英文的字体
 $UI-FONT-FAMILY: "PingFang SC","Lantinghei SC","Microsoft YaHei","HanHei SC","Helvetica ","Open Sans",Arial,"Hiragino Sans GB","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
 
+$MAIN_BC: #FFF;
+$menu-bg: $MAIN_BC; // 菜单背景色
+$menu-inline-submenu-bg: $MAIN_BC;
+$layout-header-background: $MAIN_BC; // 顶部背景
+$menu-dark-bg: $MAIN_BC; // 暗黑模式背景
+$menu-item-active-bg: #35A75F; // 选中颜色
+$menu-item-height: 45px; // 菜单高度
+$menu-item-color: #9c9bbb; // 菜单项颜色

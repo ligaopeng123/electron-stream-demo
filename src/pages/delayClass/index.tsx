@@ -12,15 +12,12 @@
 
 import React, {useState, useRef} from 'react';
 import {withRouter} from 'react-router-dom';
-import BasicContents from '../../components/Contents/BasicContents';
 
 
 const RouterAdminUsers: React.FC<{}> = (props: any) => {
     return (
         <React.Fragment>
-            <BasicContents>
-              用户表
-            </BasicContents>
+            用户表
         </React.Fragment>
     )
 }

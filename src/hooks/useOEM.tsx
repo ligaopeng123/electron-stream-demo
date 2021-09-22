@@ -23,17 +23,7 @@ const defaultConfig = {
 	menusLogo: `logo.svg`, // 菜单上logo
 	menusName: `管理系统`, // 菜单上logo
 	copyright: `2021 某某出品并提供技术支持`,
-	links: [{
-		key: 'cy-tech',
-		title: '博客地址',
-		href: 'https://blog.csdn.net/ligaoming_123',
-		blankTarget: true,
-	}, {
-		key: 'pgli',
-		title: 'git地址',
-		href: 'https://github.com/ligaopeng123/react-customizescreen',
-		blankTarget: true,
-	}]
+	links: []
 };
 
 const useOEM = (key: string) => {

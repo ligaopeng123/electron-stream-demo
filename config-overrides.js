@@ -50,6 +50,15 @@ module.exports = override(
 					dark: false, // 开启暗黑模式
 					compact: false, // 开启紧凑模式
 				}),
+				'menu-dark-bg': '#fff',
+				'menu-bg': '#fff',
+				'menu-inline-submenu-bg': '#fff',
+				'layout-header-background': '#fff',
+				'menu-item-active-bg': '#fff',
+				'menu-item-color': '#9c9bbb',
+				'menu-item-height': '45px',
+				'menu-item-font-size': '20px',
+				'menu-item-padding': '32px',
 				// 此处定义主题，也可直接在ant.less中定义
 			},
 		}

@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import HeadersJS from './headersJS';
 import {DynamicLoadScript} from "@gaopeng123/hoc";
+import './styles/ant.less';
 import './index.scss';
 
 /**

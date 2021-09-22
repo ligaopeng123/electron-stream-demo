@@ -3,11 +3,11 @@ import BasicContents from '@components/Contents/BasicContents';
 
 
 const RouterHome = () => {
-    return (
-        <BasicContents>
-           我是首页
-        </BasicContents>
-    )
+	return (
+		<div>
+			我是系统配置界面
+		</div>
+	)
 }
 
 export default RouterHome;

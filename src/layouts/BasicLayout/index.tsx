@@ -7,7 +7,7 @@ import ProLayout from '@ant-design/pro-layout';
 import proSettings from "@/defaultSettings" ;
 import * as Icon from '@ant-design/icons';
 import BackUp from './BackTop';
-import RightLayout from '../RightLayout/index';
+import RightLayout from '../RightLayout';
 import useOEM from "@/hooks/useOEM";
 import {RouteWithModuleRoutes} from '@gaopeng123/hoc';
 import {MenuDataItem} from "@ant-design/pro-layout/lib/typings";
@@ -111,6 +111,7 @@ const BasicLayout = (props: any) => {
 					//      {/*menu 菜单的头部点击事件*/}
 				}}
 				rightContentRender={() => (<RightLayout/>)}
+				links={null}
 			>
 				<RouteWithModuleRoutes routers={router}/>
 			</ProLayout>
