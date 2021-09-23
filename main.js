@@ -9,17 +9,18 @@ let mainWindow;
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		width: 730,
-		height: 460,
+		width: 1024,
+		height: 768,
 		webPreferences: {
 			nodeIntegration: true,
 			preload: path.join(__dirname, 'preload.js')
 		}
 	});
 	
-	// and load the index.html of the app.
-	mainWindow.loadFile('./build/index.html');
-	
+	// and load the index.html of the app. http://localhost:9001/
+	// mainWindow.loadFile('./build/index.html');
+
+	mainWindow.loadURL('http://localhost:9001/');
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools()
 	
