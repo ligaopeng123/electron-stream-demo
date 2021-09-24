@@ -122,7 +122,7 @@ const BasicLayout = (props: any) => {
 				{...proSettings}
 				// @ts-ignore
 				location={{pathname}}
-				logo={menusLogo}
+				logo={<div className={`logo-region`}><img src={menusLogo}/></div>}
 				title={false}
 				route={{routes: router, path: "/"}}
 				postMenuData={(menuData: any) => {

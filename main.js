@@ -11,15 +11,18 @@ function createWindow() {
 	mainWindow = new BrowserWindow({
 		width: 1024,
 		height: 768,
+		backgroundColor: '#00000000',
+		transparent: true,
 		webPreferences: {
 			nodeIntegration: true,
 			preload: path.join(__dirname, 'preload.js')
-		}
+		},
+		// frame: false
 	});
 	
 	// and load the index.html of the app. http://localhost:9001/
 	// mainWindow.loadFile('./build/index.html');
-
+	
 	mainWindow.loadURL('http://localhost:9001/');
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools()
