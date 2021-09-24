@@ -6,14 +6,14 @@
         "component": "pages/teachingCenter",
         "exact": true,
         "auth": null,
-        "icon": null
+        "icon": "teachingCenter"
     },
     {
         "id": 47,
         "name": "延时课堂",
         "path": "/delayClass",
         "exact": true,
-        "icon": null,
+        "icon": "delayClass",
         "component": "pages/delayClass"
     },
     {
@@ -21,7 +21,7 @@
         "name": "教师培训",
         "path": "/teacherTraining",
         "auth": null,
-        "icon": null,
+        "icon": "teacherTraining",
         "component": "pages/teacherTraining"
     },
     {
@@ -30,6 +30,6 @@
         "path": "/personalCenter",
         "component": "pages/personalCenter",
         "auth": null,
-        "icon": null
+        "icon": "personalCenter"
     }
 ]

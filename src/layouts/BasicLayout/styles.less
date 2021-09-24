@@ -22,7 +22,7 @@
 
         &:hover {
             a {
-                color:#9C9BBB !important;
+                color: #9C9BBB !important;
             }
         }
     }
@@ -50,3 +50,33 @@
     display: none;
 }
 
+// 处理菜单选中和非选中图标
+.ant-menu-item-only-child {
+    img.noselected {
+        display: inherit;
+    }
+
+    img.selected {
+        display: none;
+    }
+}
+
+.ant-menu-item-selected {
+    img.noselected {
+        display: none;
+    }
+
+    img.selected {
+        display: inherit;
+    }
+}
+
+// 前进后退路由
+.change-router {
+    padding-left: 48px;
+}
+
+.ant-layout-header {
+    height: 76px !important;
+    line-height: 76px !important;
+}

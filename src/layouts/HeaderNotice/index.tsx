@@ -70,7 +70,7 @@ const HeaderNatice: React.FC<NoticeIconProps> & {
 	});
 	const noticeButtonClass = classNames(className, styles.noticeButton);
 	const notificationBox = getNotificationBox();
-	const NoticeBellIcon = bell || <BellOutlined className={styles.icon}/>;
+	const NoticeBellIcon = bell || <BellOutlined style={{color: '#B3B3B3'}} className={styles.icon}/>;
 	const trigger = (
 		<span className={classNames(noticeButtonClass, {opened: visible})}>
       <Badge count={count} color={'#7F8693'} style={{boxShadow: 'none'}} className={styles.badge}>

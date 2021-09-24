@@ -13,6 +13,7 @@ import styles from './index.module.less';
 import UserDropdown from '../HeaderDropdown/user';
 import HeaderNaticeInterface from '../HeaderNotice/interface';
 import HeaderSearchInterface from '../HeaderSearch/interface';
+import Vpi from "@/layouts/RightLayout/Vpi";
 
 
 export interface GlobalHeaderRightProps extends Partial<any>, Partial<ProSettings> {
@@ -30,7 +31,8 @@ const RightLayout: React.SFC<GlobalHeaderRightProps> = (props) => {
 	return (
 		<div className={className}>
 			<UserDropdown/>
-			<HeaderSearchInterface/>
+			<Vpi/>
+			{/*<HeaderSearchInterface/>*/}
 			<HeaderNaticeInterface/>
 		</div>
 	);
