@@ -15,18 +15,20 @@ function createWindow() {
 		transparent: true,
 		webPreferences: {
 			nodeIntegration: true,
+			contextIsolation: false, // 渲染进程是否可使用require
 			preload: path.join(__dirname, 'preload.js')
 		},
-		// frame: false
+		frame: false // 关闭窗口
 	});
 	
 	// and load the index.html of the app. http://localhost:9001/
-	// mainWindow.loadFile('./build/index.html');
-	
-	mainWindow.loadURL('http://localhost:9001/');
-	// Open the DevTools.
-	mainWindow.webContents.openDevTools()
-	
+	// 环境管理
+	if (process.env.REACT_APP_ENV === 'production') {
+		mainWindow.loadFile('./build/index.html');
+	} else {
+		mainWindow.loadURL('http://localhost:9001/');
+		mainWindow.webContents.openDevTools();
+	}
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function () {
 		// Dereference the window object, usually you would store windows
@@ -42,6 +44,26 @@ const ipc = require('electron').ipcMain;
 //接收
 ipc.on('test', function (msg) {
 	console.log(msg)
+});
+
+
+//接收窗口最小化通信
+ipc.on('window-min', () => {
+	mainWindow.minimize();
+});
+
+//接收窗口变小（还原到原状态）通信
+ipc.on('window-max', () => {
+	if (mainWindow.isMaximized()) {
+		mainWindow.unmaximize();
+	} else {
+		mainWindow.maximize();
+	}
+});
+
+//接收窗口最大化通信
+ipc.on('window-close', () => {
+	mainWindow.close();
 });
 
 // This method will be called when Electron has finished
