@@ -59,6 +59,10 @@ module.exports = override(
 				'menu-item-height': '45px',
 				'menu-item-font-size': '20px',
 				'menu-item-padding': '32px',
+				'border-radius-base': '8px',
+				'body-background': 'rgba(0,0,0,0)',
+				'background-color-base': 'rgba(0,0,0,0)',
+				'component-background': 'rgba(0,0,0,0)',
 				// 此处定义主题，也可直接在ant.less中定义
 			},
 		}

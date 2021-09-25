@@ -11,6 +11,8 @@ function createWindow() {
 	mainWindow = new BrowserWindow({
 		width: 1024,
 		height: 768,
+		minWidth: 1024,//窗口的最小宽度，单位: 像素值,
+		minHeight: 768,//窗口的最小高度，单位: 像素值,
 		backgroundColor: '#00000000',
 		transparent: true,
 		webPreferences: {
@@ -18,13 +20,14 @@ function createWindow() {
 			contextIsolation: false, // 渲染进程是否可使用require
 			preload: path.join(__dirname, 'preload.js')
 		},
-		frame: process.env.REACT_APP_ENV !== 'production' // 关闭窗口
+		frame: false// process.env.REACT_APP_ENV !== 'production' // 关闭窗口
 	});
 	
 	// and load the index.html of the app. http://localhost:9001/
 	// 环境管理
 	if (process.env.REACT_APP_ENV === 'production') {
 		mainWindow.loadFile('./build/index.html');
+		mainWindow.webContents.openDevTools();
 	} else {
 		mainWindow.loadURL('http://localhost:9001/');
 		mainWindow.webContents.openDevTools();
