@@ -14,4 +14,3 @@ window.addEventListener('DOMContentLoaded', () => {
 // 注入公共函数
 // global.__base_path = path.join(__dirname, 'build');
 // global.__set__base_path = path.join;
-
