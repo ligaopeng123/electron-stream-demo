@@ -18,7 +18,7 @@ function createWindow() {
 			contextIsolation: false, // 渲染进程是否可使用require
 			preload: path.join(__dirname, 'preload.js')
 		},
-		frame: false // 关闭窗口
+		frame: process.env.REACT_APP_ENV !== 'production' // 关闭窗口
 	});
 	
 	// and load the index.html of the app. http://localhost:9001/

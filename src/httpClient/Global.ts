@@ -57,7 +57,9 @@ export const setCurrentUserToStorage = (value: any) => {
  * @param path
  */
 export const loadLocalJson = asyncMemoized(async (path: string) => {
-	const res = await fetch(path);
+	// @ts-ignore
+	// const _path = window.__base_path ? window.__set__base_path(window.__base_path, path) : path;
+	const res = await fetch(`.${path}`);
 	const json = await res.clone().json();
 	return json;
 });

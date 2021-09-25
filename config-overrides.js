@@ -78,7 +78,7 @@ module.exports = override(
 		// config.devtool = config.mode === 'development' ? 'cheap-module-source-map' : false;
 		if (process.env.NODE_ENV === "production") {
 			config.devtool = false;
-			config.module.rules[2].oneOf.push({
+			config.module.rules[2]?.oneOf?.push({
 				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
 				loader: 'file-loader'
 			});

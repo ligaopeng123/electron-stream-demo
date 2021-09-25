@@ -6,6 +6,7 @@ import HeaderDropdown from './index';
 import {useRecoilState} from "recoil";
 import CurrentUser, {CurrentUserState} from "@store/CurrentUser";
 import styles from '../RightLayout/index.module.less';
+import userIcon from '../../assets/vip/user.svg';
 
 
 const UserDropdown: React.FC<{}> = (props: any) => {
@@ -64,7 +65,7 @@ const UserDropdown: React.FC<{}> = (props: any) => {
 	return currentUser && currentUser.name ? (
 		<HeaderDropdown overlay={menuHeaderDropdown}>
             <span className={`${styles.action} ${styles.account}`}>
-              <Avatar size="small" className={styles.avatar} src={currentUser?.avatar || '/user.svg'} alt="avatar"/>
+              <Avatar size="small" className={styles.avatar} src={currentUser?.avatar || userIcon} alt="avatar"/>
               <span className={`${styles.name} anticon`}>{currentUser?.name}</span>
                 <Drawer
 	                zIndex={10000}
