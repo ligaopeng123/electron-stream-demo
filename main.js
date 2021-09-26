@@ -9,9 +9,9 @@ let mainWindow;
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		width: 1024,
+		width: 1400,
 		height: 768,
-		minWidth: 1024,//窗口的最小宽度，单位: 像素值,
+		minWidth: 1400,//窗口的最小宽度，单位: 像素值,
 		minHeight: 768,//窗口的最小高度，单位: 像素值,
 		backgroundColor: '#00000000', // 窗口背景色
 		transparent: true, // 设置透明窗体

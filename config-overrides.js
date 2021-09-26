@@ -63,6 +63,9 @@ module.exports = override(
 				'body-background': 'rgba(0,0,0,0)',
 				'background-color-base': 'rgba(0,0,0,0)',
 				'component-background': '#fff',
+				'tabs-card-active-color': '#35A75F',
+				'tabs-ink-bar-color': '#35A75F',
+				'tabs-bar-margin': '0px 8px',
 				// 此处定义主题，也可直接在ant.less中定义
 			},
 		}
