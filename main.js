@@ -13,8 +13,8 @@ function createWindow() {
 		height: 768,
 		minWidth: 1024,//窗口的最小宽度，单位: 像素值,
 		minHeight: 768,//窗口的最小高度，单位: 像素值,
-		backgroundColor: '#00000000',
-		transparent: true,
+		backgroundColor: '#00000000', // 窗口背景色
+		transparent: true, // 设置透明窗体
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false, // 渲染进程是否可使用require

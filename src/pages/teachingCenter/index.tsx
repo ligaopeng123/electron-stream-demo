@@ -1,13 +1,29 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import BasicContents from '@components/Contents/BasicContents';
+import {init, reducer, State} from "@pages/teachingCenter/Store";
+import {Col, Row} from "antd";
+import ChangeTeachingMaterials from "@pages/teachingCenter/components/ChangeTeachingMaterials";
 
 
-const RouterHome = () => {
-	return (
-		<div>
-			我是系统配置界面
-		</div>
-	)
-}
+const TeachingCenter = () => {
+    const [state, dispatch] = useReducer(reducer, State, init);
+    return (
+        <React.Fragment>
+            <Row>
+                <Col span={6}>
+                    <ChangeTeachingMaterials state={state} dispatch={dispatch} />
+                </Col>
+                <Col span={12}></Col>
+                <Col span={6}></Col>
+            </Row>
+            <Row>
+                <Col span={18}></Col>
+                <Col span={6}>
 
-export default RouterHome;
+                </Col>
+            </Row>
+        </React.Fragment>
+    )
+};
+
+export default TeachingCenter;

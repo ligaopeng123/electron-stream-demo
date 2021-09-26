@@ -18,6 +18,7 @@ $borderRadius: 24px;
     height: 100%;
     @extend .border-radius-overflow;
     border-radius: $borderRadius;
+    background-color: #F0F2F9;
     //box-shadow: 0px $borderRadius $borderRadius #888888;
 }
 
