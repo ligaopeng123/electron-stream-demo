@@ -15,10 +15,10 @@ const TeachingCenter = () => {
 	return (
 		<React.Fragment>
 			<Row gutter={16}>
-				<Col span={6}>
+				<Col span={5}>
 					<ChangeTeachingMaterials state={state} dispatch={dispatch}/>
 				</Col>
-				<Col span={12}><ChooseACourse state={state} dispatch={dispatch}/></Col>
+				<Col span={13}><ChooseACourse state={state} dispatch={dispatch}/></Col>
 				<Col span={6}></Col>
 			</Row>
 			<Row gutter={16} style={{paddingTop: 16}}>
@@ -34,7 +34,7 @@ const TeachingCenter = () => {
 						</Tabs>
 					</Card>
 				</Col>
-				<Col span={6}>
+				<Col span={5}>
 				
 				</Col>
 			</Row>

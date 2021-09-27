@@ -17,6 +17,7 @@ import styles from './InstructionalDesign.module.less';
 const InstructionalDesign: React.FC<any> = (props: any) => {
 	return (
 		<Card type="inner"
+		      size={`small`}
 		      className={styles.card}
 		      title={<span className={styles.emptyText}>暂无资料</span>}
 		      extra={<Button className={styles.bth}>下载</Button>}
