@@ -3,6 +3,7 @@
  */
 const HeadersJS = [
 	'./js/screenfull.js',
+	// './js/iconfont.js',
 	// '/js/FileReader.js',
 ];
 
