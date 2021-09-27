@@ -4,6 +4,8 @@ import {init, reducer, State} from "@pages/teachingCenter/Store";
 import {Card, Col, Row, Tabs} from "antd";
 import ChangeTeachingMaterials from "@pages/teachingCenter/components/ChangeTeachingMaterials";
 import ChooseACourse from "@pages/teachingCenter/components/ChooseACourse";
+import EducationResources from "@pages/teachingCenter/components/EducationResources";
+import InstructionalDesign from "@pages/teachingCenter/components/InstructionalDesign";
 import styles from './styles.module.less';
 
 const {TabPane} = Tabs;
@@ -24,10 +26,10 @@ const TeachingCenter = () => {
 					<Card bordered={false} className={styles.tabs}>
 						<Tabs centered={true}>
 							<TabPane tab="教学资源" key="1">
-								Content of tab 1
+								<EducationResources state={state} dispatch={dispatch}/>
 							</TabPane>
 							<TabPane tab="教学设计" key="2">
-								Content of tab 2
+								<InstructionalDesign state={state} dispatch={dispatch}/>
 							</TabPane>
 						</Tabs>
 					</Card>
