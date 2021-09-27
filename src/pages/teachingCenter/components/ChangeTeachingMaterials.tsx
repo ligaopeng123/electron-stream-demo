@@ -6,7 +6,7 @@ import Icon from "@components/Icon";
 
 const ChangeTeachingMaterials: React.FC<any> = (props: any) => {
 	return (
-		<Card bordered={false} style={{height: 76}} bodyStyle={{padding: '6px 24px'}}>
+		<Card bordered={false} style={{height: 76}} bodyStyle={{padding: '6px 16px'}}>
 			<Row>
 				<Col span={20}>
 					<div className={styles.title}> 更换教材</div>
@@ -19,4 +19,3 @@ const ChangeTeachingMaterials: React.FC<any> = (props: any) => {
 };
 
 export default ChangeTeachingMaterials;
-
