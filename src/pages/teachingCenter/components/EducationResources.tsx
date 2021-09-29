@@ -16,7 +16,7 @@ import {Card} from "antd";
 
 const EducationResources: React.FC<any> = (props: any) => {
 	return (
-		<Card bordered={false}>
+		<Card bordered={false} bodyStyle={{height: 514}}>
 			<EducationResourcesTabs/>
 			<EducationEmpty/>
 		</Card>

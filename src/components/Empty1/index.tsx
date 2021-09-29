@@ -13,11 +13,15 @@ import React from 'react';
 import {Empty} from "antd";
 import empty from '../../assets/teachingCenter/empty.png';
 
+
+type Empty1Props = {
+	empty?: string;
+}
 const Empty1: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
 			<Empty
-				image={empty}
+				image={props.empty || empty}
 				imageStyle={Object.assign({
 					height: 210
 				}, props.imageStyle)}

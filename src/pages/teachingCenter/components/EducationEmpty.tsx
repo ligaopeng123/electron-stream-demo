@@ -17,6 +17,7 @@ const EducationEmpty: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
 			<Empty1
+				imageStyle={{height: 330}}
 				description="暂无本课上课资源 您可以点击下方添加资源"
 			>
 				<Button style={{color: '#35A75F', borderColor: '#35A75F'}} shape="round">我要添加</Button>
