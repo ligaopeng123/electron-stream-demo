@@ -10,11 +10,16 @@ import MidTerm from "@pages/teachingCenter/components/MidTerm";
 import LessonPreparation from "@pages/teachingCenter/components/LessonPreparation";
 import AdvertisingSpace from "@pages/teachingCenter/components/AdvertisingSpace";
 import styles from './styles.module.less';
+import useResize from "@hooks/useResize";
 
 const {TabPane} = Tabs;
 
 const TeachingCenter = () => {
 	const [state, dispatch] = useReducer(reducer, State, init);
+	const conentHeight = useResize();
+	
+	const bodyHeight = conentHeight - 76 - 76 - 16 - 16 - 24;
+	
 	return (
 		<React.Fragment>
 			<Row gutter={16}>
@@ -26,7 +31,7 @@ const TeachingCenter = () => {
 			</Row>
 			<Row gutter={16} style={{paddingTop: 16}}>
 				<Col span={18}>
-					<Card bordered={false} className={styles.tabs} bodyStyle={{padding: 0}}>
+					<Card bordered={false} className={styles.tabs} bodyStyle={{padding: 0, height: bodyHeight}}>
 						<Tabs centered={true}>
 							<TabPane tab="教学资源" key="1">
 								<EducationResources state={state} dispatch={dispatch}/>
@@ -38,11 +43,11 @@ const TeachingCenter = () => {
 					</Card>
 				</Col>
 				<Col span={6}>
-					<Row gutter={16}>
-						<Col span={24} style={{marginBottom: 16}}>
+					<Row gutter={16} style={{height: bodyHeight}}>
+						<Col span={24} style={{marginBottom: 16, height: 'calc(100% - 256px)'}}>
 							<LessonPreparation/>
 						</Col>
-						<Col span={24}>
+						<Col span={24} style={{height: 240}}>
 							<AdvertisingSpace/>
 						</Col>
 					</Row>

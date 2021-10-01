@@ -18,15 +18,16 @@ import Empty1 from "@components/Empty1";
 
 const LessonPreparation: React.FC<any> = (props: any) => {
 	return (
-		<Card bordered={false} title={
+		<Card bordered={false} style={{height: '100%'}} title={
 			<React.Fragment>
 				<img src={lrIcon}/>
 				<span className={styles.title}>本课备课</span>
 			</React.Fragment>
 		}
 		      extra={<Button className={styles.bth} shape="round">开始上课</Button>}
+		      bodyStyle={{height: '100%'}}
 		>
-			<Empty1 imageStyle={{height: 150}} empty={emptyIcon}>暂无备课记录 请前往左侧添加</Empty1>
+			<Empty1 imageStyle={{height: '100%'}} empty={emptyIcon}>暂无备课记录 请前往左侧添加</Empty1>
 		</Card>
 	)
 };

@@ -7,6 +7,17 @@
 - ant + ant pro
 - recoil
 
+### 启动指令
+
+```shell
+// 启动浏览器环境
+npm run start
+// 启动electron + 浏览器
+npm run start:electron
+// 测试编译的包
+npm run start:test_electron
+```
+
 ### 目录文件
 
 public/json/menus.json: 定义路由模块相关
