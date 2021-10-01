@@ -1,9 +1,16 @@
-/**
- *  用户登录模块
- */
+/**********************************************************************
+ *
+ * @模块名称: Register
+ *
+ * @模块用途: Register
+ *
+ * @创建人: pgli
+ *
+ * @date: 2021/10/1 12:30
+ *
+ **********************************************************************/
 import React, {useEffect, useState} from 'react';
-import {withRouter} from 'react-router-dom';
-import useOEM from "@/hooks/useOEM";
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import {Card, message} from "antd";
 import {useRecoilState} from "recoil";
 import CurrentUser from "@store/CurrentUser";
@@ -22,30 +29,31 @@ import Typography from '@material-ui/core/Typography';
 import {createTheme, ThemeProvider} from '@material-ui/core/styles';
 import {uuid} from "@gaopeng123/utils";
 import HeaderTitle from "@/layouts/UserLayout/HeaderTitle";
-import './styles.less';
+import '../styles.less';
 
 const theme = createTheme();
 
 type LoginStatus = {
 	uuid: string,
-	username: string,
-	password: string
+	phone: string,
+	password: string,
+	verification: string,
 }
 
-const UserLayout: React.FC<any> = (props: any) => {
-	/**
-	 * oem数据消费
-	 */
-	const loginLogo = useOEM('loginLogo');
-	const loginName = useOEM('loginName');
-	const loginDesc = useOEM('loginDesc');
+type RegisterProps = {
+	leftImage: string;
+	title: string | React.ReactNode,
+	description?: string | React.ReactNode,
+}
+const Register: React.FC<RegisterProps & RouteComponentProps> = (props) => {
 	/**
 	 * 检查登录状态
 	 */
 	const [loginStatus, setLoginStatus] = useState<LoginStatus>({
-		username: '',
+		phone: '',
 		password: '',
-		uuid: ''
+		uuid: '',
+		verification: ''
 	});
 	
 	/**
@@ -67,8 +75,8 @@ const UserLayout: React.FC<any> = (props: any) => {
 	
 	useEffect(() => {
 		if (loginStatus.uuid) {
-			const {username, password} = loginStatus;
-			setCurrentUser({name: username, token: ''});
+			const {phone, password} = loginStatus;
+			setCurrentUser({name: phone, token: ''});
 			onFinish();
 		}
 		return () => {
@@ -77,8 +85,9 @@ const UserLayout: React.FC<any> = (props: any) => {
 	}, [loginStatus]);
 	
 	const [showPassword, setShowPassword] = useState<boolean>(false);
-	const [userNameError, setUserNameError] = useState<boolean>(false);
+	const [phoneError, setphoneError] = useState<boolean>(false);
 	const [passwordError, setPasswordError] = useState<boolean>(false);
+	const [verificationError, setVerificationError] = useState<boolean>(false);
 	
 	const handleMouseDownPassword = (event: any) => {
 		event.preventDefault();
@@ -92,10 +101,12 @@ const UserLayout: React.FC<any> = (props: any) => {
 		// @ts-ignore
 		if (event.target?.value) {
 			const name = event.target.getAttribute('name');
-			if (name === 'username' && userNameError) {
-				setUserNameError(false);
+			if (name === 'phone' && phoneError) {
+				setphoneError(false);
 			} else if (name === 'password' && passwordError) {
 				setPasswordError(false);
+			} else if (name === 'verification' && verificationError) {
+				setVerificationError(false);
 			}
 		}
 	};
@@ -105,16 +116,19 @@ const UserLayout: React.FC<any> = (props: any) => {
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
-		const username = data.get('username') as string;
+		const phone = data.get('phone') as string;
 		const password = data.get('password') as string;
-		if (!username || !password) {
-			!username && setUserNameError(true);
+		const verification = data.get('verification') as string;
+		if (!phone || !password || !verificationError) {
+			!phone && setphoneError(true);
 			!password && setPasswordError(true);
+			!verificationError && setVerificationError(true);
 			return;
 		}
 		setLoginStatus({
-			username,
+			phone,
 			password,
+			verification,
 			uuid: uuid()
 		});
 	};
@@ -133,7 +147,7 @@ const UserLayout: React.FC<any> = (props: any) => {
 						sm={4}
 						md={7}
 						sx={{
-							backgroundImage: 'url(/assets/login.png)',
+							backgroundImage: `url(${props.leftImage})`,
 							backgroundRepeat: 'no-repeat',
 							// backgroundColor: 'rgba(0,0,0,0)',
 							backgroundSize: 'cover',
@@ -153,28 +167,62 @@ const UserLayout: React.FC<any> = (props: any) => {
 							className={`login-form`}
 						>
 							<Typography className={`login-text`} component="h1" variant="h5">
-								登录账号
+								{props.title}
+							</Typography>
+							<Typography className={`login-text-description`} component="h1" variant="subtitle2">
+								{props.description}
 							</Typography>
 							<Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
 								<TextField
 									className={`form-item`}
-									error={userNameError}
+									error={phoneError}
 									margin="normal"
 									required
 									fullWidth
-									id="username"
-									label="请输入您的用户名"
-									name="username"
-									autoComplete="username"
+									id="phone"
+									label="请输入您的手机号"
+									name="phone"
+									autoComplete="phone"
 									onChange={handleChange}
-									helperText={userNameError ? "请输入用户名" : null}
+									helperText={phoneError ? "请输入用户名" : null}
 									autoFocus
 									InputProps={{
 										startAdornment: <InputAdornment position="start"></InputAdornment>,
 									}}
 								/>
+								<Grid container>
+									<Grid item xs>
+										<TextField
+											error={verificationError}
+											helperText={verificationError ? "请输入请输入您的验证码" : null}
+											autoComplete="verification"
+											name="verification"
+											required
+											fullWidth
+											id="verification"
+											label="请输入您的验证码"
+											autoFocus
+											InputProps={{
+												startAdornment: <InputAdornment position="start"></InputAdornment>,
+											}}
+										/>
+									</Grid>
+									<Grid item>
+										<Button
+											type="submit"
+											fullWidth
+											variant="contained"
+											sx={{mt: 6, mb: 4}}
+											className={`login-sumbit-verification`}
+										>
+											获取验证码
+										</Button>
+									</Grid>
+								</Grid>
 								<TextField
+									className={`form-item`}
 									error={passwordError}
+									helperText={passwordError ? "请输入密码" : null}
 									margin="normal"
 									required
 									fullWidth
@@ -184,7 +232,6 @@ const UserLayout: React.FC<any> = (props: any) => {
 									type={showPassword ? 'text' : 'password'}
 									id="password"
 									autoComplete="current-password"
-									helperText={passwordError ? "请输入密码" : null}
 									InputProps={{
 										startAdornment: <InputAdornment position="start"></InputAdornment>,
 										endAdornment: <InputAdornment position="end">
@@ -199,32 +246,18 @@ const UserLayout: React.FC<any> = (props: any) => {
 										</InputAdornment>
 									}}
 								/>
-								{/*<FormControlLabel*/}
-								{/*control={<Checkbox value="remember" color="primary"/>}*/}
-								{/*label="Remember me"*/}
-								{/*/>*/}
-								<Grid container>
-									<Grid item xs>
-									
-									</Grid>
-									<Grid item>
-										<Link href="#/forgetPassword" variant="body2">
-											忘记密码
-										</Link>
-									</Grid>
-								</Grid>
 								<Button
 									type="submit"
 									fullWidth
 									variant="contained"
 									sx={{mt: 3, mb: 2}}
-									className={`login-sumbit-button`}
+									className={`login-sumbit-button-login`}
 								>
 									登录
 								</Button>
 								<Grid className={`login-register`}>
-									<Link href="#/register" variant="body2">
-										{"没有账号？点击注册"}
+									<Link href="#/login" variant="body2">
+										{"已有账号？点击登录账号"}
 									</Link>
 								</Grid>
 							</Box>
@@ -236,5 +269,4 @@ const UserLayout: React.FC<any> = (props: any) => {
 	);
 };
 
-export default withRouter(UserLayout);
-
+export default withRouter(Register);

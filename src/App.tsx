@@ -1,5 +1,5 @@
 // 主目录结构
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRecoilState, useRecoilValue} from "recoil";
 import {
 	// BrowserRouter as Router, // 不再使用BrowserRouter  因为要在外部进行路由跳转 此处直接使用Router
@@ -10,6 +10,8 @@ import {
 } from 'react-router-dom';
 import BasicLayout from './layouts/BasicLayout';
 import UserLayout from './layouts/UserLayout';
+import UserRegister from "@/layouts/UserLayout/UserRegister";
+import ForgetPassword from "@/layouts/UserLayout/ForgetPassword";
 import OEM, {oemData} from "@store/OEM";
 import {BrowserHistory} from "@httpClient/toLogin";
 import {unregisterFetch} from "@/httpClient";
@@ -23,7 +25,8 @@ const App: React.FC<any> = (props) => {
 	/**
 	 * 检查是否登录过
 	 */
-	const notLogged = isEmptyObject(currentUser);
+	const _notLogged = isEmptyObject(currentUser);
+	const [notLogged, setNotLogged] = useState<boolean>(false);
 	
 	useEffect(() => {
 		oemData.then((res: any) => {
@@ -36,6 +39,14 @@ const App: React.FC<any> = (props) => {
 	return (
 		<Router history={BrowserHistory}>
 			<Switch>
+				{/*注册*/}
+				<Route exact path="/register">
+					<UserRegister/>
+				</Route>
+				{/*忘记密码*/}
+				<Route exact path="/forgetPassword">
+					<ForgetPassword/>
+				</Route>
 				{/*登录页*/}
 				<Route exact path="/login">
 					<UserLayout/>
