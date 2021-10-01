@@ -21,8 +21,12 @@ if (window?.require) {
 	const electron = window?.require("electron");
 	ipcRenderer = electron.ipcRenderer;
 }
-
-const Manipulate: React.FC<any> = (props: any) => {
+type ManipulateProps = {
+	min?: boolean,
+	screen?: boolean,
+	close?: boolean,
+}
+const Manipulate: React.FC<ManipulateProps> = (props) => {
 	const min = () => {
 		ipcRenderer?.send('window-min');
 	};
@@ -34,9 +38,15 @@ const Manipulate: React.FC<any> = (props: any) => {
 	};
 	return (
 		<div className={styles.manipulate}>
-			<img onClick={min} className={styles.icon} src={minIcon}/>
-			<img onClick={screen} className={styles.icon} src={screenIcon}/>
-			<img onClick={close} className={styles.icon} src={closeIcon}/>
+			{
+				props.min !== false ? <img onClick={min} className={styles.icon} src={minIcon}/> : null
+			}
+			{
+				props.screen !== false ? <img onClick={screen} className={styles.icon} src={screenIcon}/> : null
+			}
+			{
+				props.close !== false ? <img onClick={close} className={styles.icon} src={closeIcon}/> : null
+			}
 		</div>
 	)
 };
