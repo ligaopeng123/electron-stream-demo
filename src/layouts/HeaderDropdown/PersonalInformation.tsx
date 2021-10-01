@@ -19,7 +19,10 @@ const {Step} = Steps;
 
 const PersonalInformation: React.FC<any> = (props: any) => {
 	const [isModalVisible, setIsModalVisible] = useState(false);
-	
+	/**
+	 * 此处检测是否完善个人信息
+	 * 如果没有完善 则弹出该窗口 强制完善个人信息
+	 */
 	useEffect(() => {
 		// setIsModalVisible(true);
 	}, []);
