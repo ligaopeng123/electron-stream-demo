@@ -236,5 +236,3 @@ const UserLayout: React.FC<any> = (props: any) => {
 
 export default withRouter(UserLayout);
 
-
-
