@@ -50,6 +50,7 @@ module.exports = override(
 					dark: false, // 开启暗黑模式
 					compact: false, // 开启紧凑模式
 				}),
+				'primary-color': '#35A75F',
 				'menu-dark-bg': '#fff',
 				'menu-bg': '#fff',
 				'menu-inline-submenu-bg': '#fff',

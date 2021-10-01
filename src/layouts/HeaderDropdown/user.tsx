@@ -5,9 +5,9 @@ import {LogoutOutlined, SettingOutlined, UserOutlined} from '@ant-design/icons';
 import HeaderDropdown from './index';
 import {useRecoilState} from "recoil";
 import CurrentUser, {CurrentUserState} from "@store/CurrentUser";
+import PersonalInformation from "./PersonalInformation";
 import styles from '../RightLayout/index.module.less';
 import userIcon from '../../assets/vip/user.svg';
-
 
 const UserDropdown: React.FC<{}> = (props: any) => {
 	/**
@@ -62,37 +62,47 @@ const UserDropdown: React.FC<{}> = (props: any) => {
 		</Menu>
 	);
 	
-	return currentUser && currentUser.name ? (
-		<HeaderDropdown overlay={menuHeaderDropdown}>
-            <span className={`${styles.action} ${styles.account}`}>
-              <Avatar size="small" className={styles.avatar} src={currentUser?.avatar || userIcon} alt="avatar"/>
-              <span className={`${styles.name} anticon`}>{currentUser?.name}</span>
-                <Drawer
-	                zIndex={10000}
-	                width={500}
-	                title="个人中心"
-	                placement="right"
-	                closable={false}
-	                onClose={() => {
-		                setVisible(false);
-	                }}
-	                visible={visible}
-                >
-               {/*<UserFormComponent disabled={true} modalData={{name: user.username, organization: '沙河集团'}}/>*/}
-            </Drawer>
-            </span>
-		</HeaderDropdown>
-	) : (
-		<span className={`${styles.action} ${styles.account}`}>
-        <Spin
-	        size="small"
-	        style={{
-		        marginLeft: 8,
-		        marginRight: 8,
-	        }}
-        />
-      </span>
-	);
+	return (<React.Fragment>
+		{
+			currentUser
+				? <React.Fragment>
+					<HeaderDropdown overlay={menuHeaderDropdown}>
+	                <span className={`${styles.action} ${styles.account}`}>
+	                    <Avatar size="small" className={styles.avatar} src={currentUser?.avatar || userIcon}
+	                            alt="avatar"/>
+	                <span className={`${styles.name} anticon`}>{currentUser?.name}</span>
+	                    <Drawer
+		                    zIndex={10000}
+		                    width={500}
+		                    title="个人中心"
+		                    placement="right"
+		                    closable={false}
+		                    onClose={() => {
+			                    setVisible(false);
+		                    }}
+		                    visible={visible}
+	                    >
+	               {/*<UserFormComponent disabled={true} modalData={{name: user.username, organization: '沙河集团'}}/>*/}
+	            </Drawer>
+	                </span>
+					</HeaderDropdown>
+					<PersonalInformation/>
+				</React.Fragment>
+				: <React.Fragment>
+					<span className={`${styles.action} ${styles.account}`}>
+				        <Spin
+					        size="small"
+					        style={{
+						        marginLeft: 8,
+						        marginRight: 8,
+					        }}
+				        />
+	                </span>
+				</React.Fragment>
+			
+		}
+	</React.Fragment>);
 };
 
 export default withRouter(UserDropdown);
+
