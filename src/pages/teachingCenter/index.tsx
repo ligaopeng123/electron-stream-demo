@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import BasicContents from '@components/Contents/BasicContents';
 import {init, reducer, State} from "@pages/teachingCenter/Store";
-import {Card, Col, Row, Tabs} from "antd";
+import {Col, Row, Tabs} from "antd";
 import ChangeTeachingMaterials from "@pages/teachingCenter/components/ChangeTeachingMaterials";
 import ChooseACourse from "@pages/teachingCenter/components/ChooseACourse";
 import EducationResources from "@pages/teachingCenter/components/EducationResources";
@@ -9,8 +9,9 @@ import InstructionalDesign from "@pages/teachingCenter/components/InstructionalD
 import MidTerm from "@pages/teachingCenter/components/MidTerm";
 import LessonPreparation from "@pages/teachingCenter/components/LessonPreparation";
 import AdvertisingSpace from "@pages/teachingCenter/components/AdvertisingSpace";
-import styles from './styles.module.less';
 import useResize from "@hooks/useResize";
+import Tabs1 from "@components/Tabs1";
+import styles from './styles.module.less';
 
 const {TabPane} = Tabs;
 
@@ -31,16 +32,14 @@ const TeachingCenter = () => {
 			</Row>
 			<Row gutter={16} style={{paddingTop: 16}}>
 				<Col span={18}>
-					<Card bordered={false} className={styles.tabs} bodyStyle={{padding: 0, height: bodyHeight}}>
-						<Tabs centered={true}>
-							<TabPane tab="教学资源" key="1">
-								<EducationResources state={state} dispatch={dispatch}/>
-							</TabPane>
-							<TabPane tab="教学设计" key="2">
-								<InstructionalDesign state={state} dispatch={dispatch}/>
-							</TabPane>
-						</Tabs>
-					</Card>
+					<Tabs1 height={bodyHeight}>
+						<TabPane tab="教学资源" key="1">
+							<EducationResources state={state} dispatch={dispatch}/>
+						</TabPane>
+						<TabPane tab="教学设计" key="2">
+							<InstructionalDesign state={state} dispatch={dispatch}/>
+						</TabPane>
+					</Tabs1>
 				</Col>
 				<Col span={6}>
 					<Row gutter={16} style={{height: bodyHeight}}>

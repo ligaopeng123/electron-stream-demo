@@ -17,12 +17,13 @@ import styles from './InstructionalDesign.module.less';
 const InstructionalDesign: React.FC<any> = (props: any) => {
 	return (
 		<Card type="inner"
-		      bodyStyle={{height: 466}}
+		      style={{height: 'calc(100% - 24px)', margin: 12}}
+		      bodyStyle={{height: '100%'}}
 		      size={`small`}
 		      className={styles.card}
 		      title={<span className={styles.emptyText}>暂无资料</span>}
 		      extra={<Button className={styles.bth}>下载</Button>}
-		      bordered={false}>
+		      bordered={true}>
 			<EducationEmpty/>
 		</Card>
 	)
