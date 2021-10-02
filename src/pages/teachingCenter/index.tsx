@@ -34,7 +34,7 @@ const TeachingCenter = () => {
 				<Col span={18}>
 					<Tabs1 height={bodyHeight}>
 						<TabPane tab="教学资源" key="1">
-							<EducationResources state={state} dispatch={dispatch}/>
+							<EducationResources state={state} dispatch={dispatch} height={bodyHeight}/>
 						</TabPane>
 						<TabPane tab="教学设计" key="2">
 							<InstructionalDesign state={state} dispatch={dispatch}/>

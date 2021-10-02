@@ -13,12 +13,20 @@ import React, {useState, useEffect} from 'react';
 import EducationResourcesTabs from "@pages/teachingCenter/components/EducationResourcesTabs";
 import EducationEmpty from "@pages/teachingCenter/components/EducationEmpty";
 import {Card} from "antd";
+import ContentCard from "@pages/teachingCenter/components/ContentCard";
+import ColCard from "@components/ColCard";
+
+const data = new Array<any>(13).fill(0).map((item) => item);
 
 const EducationResources: React.FC<any> = (props: any) => {
 	return (
-		<Card bordered={false} bodyStyle={{height: '100%'}}>
+		<Card bordered={false} bodyStyle={{height: props.height - 80 || '100%', overflowY: 'auto'}}>
 			<EducationResourcesTabs/>
-			<EducationEmpty/>
+			{/*空数据状态*/}
+			{/*<EducationEmpty/>*/}
+			<ColCard data={data} col={3} render={(row: any) => {
+				return <ContentCard action={`add`}/>
+			}}/>
 		</Card>
 	)
 };
