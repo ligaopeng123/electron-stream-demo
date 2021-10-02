@@ -7,6 +7,7 @@ export type SmallCardProps = {
 	title?: string | ReactNode;
 	description?: string | ReactNode;
 	rightIcon?: string;
+	onClick?: () => void;
 }
 const SmallCard: React.FC<SmallCardProps> = (props) => {
 	const {title, rightIcon, description} = props;
@@ -19,7 +20,10 @@ const SmallCard: React.FC<SmallCardProps> = (props) => {
 						{description}
 					</div>
 				</Col>
-				<Col span={4}><img className={styles.rightImg} src={rightIcon}/></Col>
+				<Col span={4}><img onClick={props?.onClick}
+				                   className={props.onClick ? styles.rightImgClick : styles.rightImg}
+				                   src={rightIcon}/>
+				</Col>
 			</Row>
 		</Card>
 	)

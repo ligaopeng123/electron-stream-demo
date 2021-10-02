@@ -25,7 +25,7 @@ const PersonalInformation: React.FC<any> = (props: any) => {
 	 * 如果没有完善 则弹出该窗口 强制完善个人信息
 	 */
 	useEffect(() => {
-		setIsModalVisible(true);
+		// setIsModalVisible(true);
 	}, []);
 	
 	const next = () => {
