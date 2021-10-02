@@ -67,6 +67,7 @@ module.exports = override(
 				'tabs-card-active-color': '#35A75F',
 				'tabs-ink-bar-color': '#35A75F',
 				'tabs-bar-margin': '0px 8px',
+				'modal-header-padding-vertical': '8px'
 				// 此处定义主题，也可直接在ant.less中定义
 			},
 		}

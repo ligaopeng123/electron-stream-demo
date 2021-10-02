@@ -14,6 +14,7 @@ import {Button, Card, Modal, Steps} from "antd";
 import BasicInformation from "@/layouts/HeaderDropdown/components/BasicInformation";
 import PerfectInformation from "@/layouts/HeaderDropdown/components/PerfectInformation";
 import styles from './PersonalInformation.module.less';
+import ModalTitle from "@components/ModalTitle";
 
 const {Step} = Steps;
 
@@ -24,7 +25,7 @@ const PersonalInformation: React.FC<any> = (props: any) => {
 	 * 如果没有完善 则弹出该窗口 强制完善个人信息
 	 */
 	useEffect(() => {
-		// setIsModalVisible(true);
+		setIsModalVisible(true);
 	}, []);
 	
 	const next = () => {
@@ -38,9 +39,7 @@ const PersonalInformation: React.FC<any> = (props: any) => {
 	const [current, setCurrent] = React.useState(0);
 	return (
 		<React.Fragment>
-			<Modal title={<div className={styles.title}>
-				<div className={styles.text}>完善个人信息</div>
-			</div>} width={800}
+			<Modal title={<ModalTitle>完善个人信息</ModalTitle>} width={800}
 			       visible={isModalVisible}
 			       footer={null}
 			       closable={false}>
