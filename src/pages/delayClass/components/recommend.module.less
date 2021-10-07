@@ -1,0 +1,37 @@
+.delayCnt{
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 220px);
+    .titleGroup{
+        margin-top: 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tabTitle{
+            font-size: 20px;
+            font-weight: 600;
+            color: #333333;
+        }
+        .rightPart{
+            font-size: 16px;
+            font-weight: 600;
+            color: #333333;
+            cursor: pointer;
+        }
+    }
+
+    .CardCnt{
+        margin-top: 12px;
+        display: flex;
+
+        :global{
+            .ant-card-meta{
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+::-webkit-scrollbar {
+    display: none;
+}

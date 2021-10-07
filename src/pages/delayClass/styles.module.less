@@ -1,0 +1,47 @@
+.delayMain{
+    min-width: 1118px;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding:24px 30px;
+    overflow: hidden;
+    .tabs{
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+
+        .tabPart{
+            margin-left: 36px;
+            padding:6px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333333;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tabPart:first-child{
+            margin-left: 0;
+        }
+        .selTab{
+            color: #35A75F;
+            background:rgba(53, 167, 95, .14);
+        }
+    }
+    .CardCnt{
+        margin-top: 12px;
+        display: flex;
+
+        :global{
+            .ant-card-meta{
+                display: flex;
+                align-items: center;
+            }
+            .ant-card-meta-description{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            
+        }
+    }
+}
