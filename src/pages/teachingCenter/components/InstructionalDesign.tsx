@@ -13,6 +13,11 @@ import React, {useState, useEffect} from 'react';
 import EducationEmpty from "@pages/teachingCenter/components/EducationEmpty";
 import {Button, Card} from "antd";
 import styles from './InstructionalDesign.module.less';
+import Viewer from "@components/Viewer";
+// @ts-ignore
+import ht from '../../../assets/ht.docx';
+
+console.log(ht);
 
 const InstructionalDesign: React.FC<any> = (props: any) => {
 	return (
@@ -24,7 +29,8 @@ const InstructionalDesign: React.FC<any> = (props: any) => {
 		      title={<span className={styles.emptyText}>暂无资料</span>}
 		      extra={<Button className={styles.bth}>下载</Button>}
 		      bordered={true}>
-			<EducationEmpty/>
+			<Viewer file={ht} type={`docx`}/>
+			{/*<EducationEmpty/>*/}
 		</Card>
 	)
 };
