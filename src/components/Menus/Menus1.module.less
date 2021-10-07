@@ -1,0 +1,41 @@
+.menus1 {
+    font-size: 16px !important;
+    border-right-width: 0px !important;
+    background: #F0F2F9;
+    border-radius: 6px;
+
+    :global .ant-menu-item-selected {
+        background: #35A75F !important;
+        border-radius: 6px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #FFFFFF !important;
+        border-right: 0px solid #35A75F !important;
+
+        :global .ant-menu-title-content {
+            &:before {
+                position: absolute;
+                background: #FFDE7E;
+                border-radius: 6px;
+                content: '推荐';
+                width: 32px;
+                left: 0px;
+                height: 14px;
+                font-size: 10px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #8B5000;
+                line-height: 14px;
+            }
+        }
+    }
+
+    :global .ant-menu-item-only-child {
+        text-align: center;
+        font-weight: 500;
+        height: 48px !important;
+        line-height: 48px !important;
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+}
