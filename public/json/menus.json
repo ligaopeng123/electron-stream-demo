@@ -9,6 +9,26 @@
         "icon": "teachingCenter"
     },
     {
+        "id": 33,
+        "name": "期中期末考试",
+        "path": "/testQuestions",
+        "component": "pages/testQuestions",
+        "hideInMenu": true,
+        "exact": true,
+        "auth": null,
+        "icon": "teachingCenter"
+    },
+    {
+        "id": 32,
+        "name": "期中期末考试预览",
+        "path": "/testViewer",
+        "component": "pages/testQuestions/components/TestViewer",
+        "hideInMenu": true,
+        "exact": true,
+        "auth": null,
+        "icon": "teachingCenter"
+    },
+    {
         "id": 47,
         "name": "延时课堂",
         "path": "/delayClass",

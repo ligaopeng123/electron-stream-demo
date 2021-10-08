@@ -27,7 +27,7 @@ const LessonPreparation: React.FC<any> = (props: any) => {
 		      extra={<Button className={styles.bth} shape="round">开始上课</Button>}
 		      bodyStyle={{height: '100%'}}
 		>
-			<Empty1 imageStyle={{height: '100%'}} empty={emptyIcon}>暂无备课记录 请前往左侧添加</Empty1>
+			{/*<Empty1 imageStyle={{height: '100%'}} empty={emptyIcon}>暂无备课记录 请前往左侧添加</Empty1>*/}
 		</Card>
 	)
 };

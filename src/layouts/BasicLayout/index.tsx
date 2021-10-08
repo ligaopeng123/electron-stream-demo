@@ -103,16 +103,24 @@ const BasicLayout = (props: any) => {
 	 *  修改路由
 	 **/
 	const changeRouter = (direction: 'up' | 'down') => {
-		const pathname = props.history.location.pathname;
+		const _pathname = props.history.location.pathname;
 		for (let i = 0; i < router.length; i++) {
 			const route = router[i];
-			if (pathname === route.path) {
+			if (_pathname === route.path) {
 				if (direction === 'up') {
 					for (let j = i - 1; j >= 0; j--) {
 						const routerE = router[j];
 						if (!routerE.hideInMenu) {
 							document.getElementById(routerE.path)?.click();
 							break;
+						} else {
+							// 当前分支 则表示前进回退是路由触发的 此处通过push来控制前进后退
+							if (routerE.hideInMenu && _pathname !== pathname) {
+								props.history.push({
+									pathname: routerE.path
+								});
+								break;
+							}
 						}
 					}
 				} else if (direction === 'down') {

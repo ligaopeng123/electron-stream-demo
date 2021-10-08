@@ -13,11 +13,8 @@ import React, {useState, useEffect} from 'react';
 import Tabs1 from "@components/Tabs1";
 import {Tabs} from "antd";
 import useResize from "@hooks/useResize";
-import Viewer from "@components/Viewer";
-// @ts-ignore
-import ht from '../../assets/ht.docx';
-
 import styles from './index.module.less';
+import TestPaperList from "@pages/testQuestions/components/TestPaperList";
 
 const {TabPane} = Tabs;
 
@@ -29,10 +26,12 @@ const TestQuestions: React.FC<TestQuestionsProps> = (props) => {
 		<React.Fragment>
 			<Tabs1 height={bodyHeight} destroyInactiveTabPane={true}>
 				<TabPane tab="期中考试" key="1">
-					<Viewer file={ht} type={`docx`}/>
+					<TestPaperList/>
+					{/*<Viewer file={ht} type={`docx`}/>*/}
 				</TabPane>
 				<TabPane tab="期末考试" key="2">
-					<Viewer file={ht} type={`docx`}/>
+					<TestPaperList/>
+					{/*<Viewer file={ht} type={`docx`}/>*/}
 				</TabPane>
 			</Tabs1>
 		</React.Fragment>
