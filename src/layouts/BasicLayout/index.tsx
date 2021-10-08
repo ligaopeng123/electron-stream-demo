@@ -103,13 +103,26 @@ const BasicLayout = (props: any) => {
 	 *  修改路由
 	 **/
 	const changeRouter = (direction: 'up' | 'down') => {
+		const pathname = props.history.location.pathname;
 		for (let i = 0; i < router.length; i++) {
 			const route = router[i];
 			if (pathname === route.path) {
-				if (direction === 'up' && router[i - 1]) {
-					document.getElementById(router[i - 1].path)?.click()
-				} else if (direction === 'down' && router[i + 1]) {
-					document.getElementById(router[i + 1].path)?.click()
+				if (direction === 'up') {
+					for (let j = i - 1; j >= 0; j--) {
+						const routerE = router[j];
+						if (!routerE.hideInMenu) {
+							document.getElementById(routerE.path)?.click();
+							break;
+						}
+					}
+				} else if (direction === 'down') {
+					for (let j = i + 1; j < router.length; j++) {
+						const routerE = router[j];
+						if (!routerE.hideInMenu) {
+							document.getElementById(routerE.path)?.click();
+							break;
+						}
+					}
 				}
 				break;
 			}

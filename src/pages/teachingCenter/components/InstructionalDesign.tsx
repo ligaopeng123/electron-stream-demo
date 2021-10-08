@@ -17,8 +17,6 @@ import Viewer from "@components/Viewer";
 // @ts-ignore
 import ht from '../../../assets/ht.docx';
 
-console.log(ht);
-
 const InstructionalDesign: React.FC<any> = (props: any) => {
 	return (
 		<Card type="inner"

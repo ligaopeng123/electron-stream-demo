@@ -16,13 +16,14 @@ import {Card, Tabs} from "antd";
 const {TabPane} = Tabs;
 
 type Tabs1Props = {
-	height?: number | string
+	height?: number | string;
+	destroyInactiveTabPane?: boolean;
 }
 const Tabs1: React.FC<Tabs1Props> = (props) => {
 	return (
 		<React.Fragment>
 			<Card bordered={false} className={styles.tabs} bodyStyle={{padding: 0, height: props.height || '100%'}}>
-				<Tabs centered={true} style={{height: '100%'}}>
+				<Tabs centered={true} style={{height: '100%'}} destroyInactiveTabPane={props.destroyInactiveTabPane}>
 					{
 						props.children
 					}

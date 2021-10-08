@@ -12,6 +12,7 @@
 import React, {useState, useEffect} from 'react';
 import FileViewer from 'react-file-viewer';
 import styles from './index.module.less';
+import {uuid} from "@gaopeng123/utils";
 
 type ViewerProps = {
 	type?: string;
