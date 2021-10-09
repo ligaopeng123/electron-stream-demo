@@ -17,8 +17,8 @@ import emptyIcon from "../../../assets/teachingCenter/advertising1.png";
 const AdvertisingSpace: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
-			<Card bordered={false}>
-				<Empty1 imageStyle={{height: 183}} empty={emptyIcon}></Empty1>
+			<Card bordered={false} bodyStyle={{padding: 0}}>
+				<Empty1 imageStyle={{height: 180}} empty={emptyIcon}></Empty1>
 			</Card>
 		</React.Fragment>
 	)

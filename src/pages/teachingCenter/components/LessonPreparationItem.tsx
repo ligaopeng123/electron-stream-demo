@@ -20,7 +20,7 @@ const LessonPreparationItem: React.FC<LessonPreparationItemProps> = (props) => {
 		<div className={styles.item}>
 			<div><img src={ppt}/></div>
 			<div className={styles.content}>
-				<span className={styles.title}>我的备课教案名称备份 {randomInt(0, 100)}</span>
+				<span className={styles.title}>我的备课教案名称 {randomInt(0, 100)}</span>
 				<span className={styles.text}>我的备课教案名称备份 {randomInt(0, 100)}</span>
 			</div>
 		</div>

@@ -46,10 +46,10 @@ const TeachingCenter = () => {
 				</Col>
 				<Col span={6}>
 					<Row gutter={16} style={{height: bodyHeight}}>
-						<Col span={24} style={{marginBottom: 16, height: 'calc(100% - 256px)'}}>
+						<Col span={24} style={{marginBottom: 16, height: 'calc(100% - 216px)'}}>
 							<LessonPreparation/>
 						</Col>
-						<Col span={24} style={{height: 240}}>
+						<Col span={24} style={{height: 180}}>
 							<AdvertisingSpace/>
 						</Col>
 					</Row>
