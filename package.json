@@ -59,6 +59,7 @@
     "start": "set PORT=9001 && dotenv -e .env react-app-rewired start",
     "build": "set NODE_OPTIONS=--max_old_space_size=36000 && dotenv -e .env.pod react-app-rewired build",
     "start:electron": "concurrently \"wait-on http://localhost:9001 && electron .\"  \"npm run start\" ",
+    "build:electron_test": "dotenv -e .env.pod electron-builder",
     "build:electron": "npm run build && electron-builder",
     "start:test_electron": "dotenv -e .env.pod electron .",
     "test": "react-scripts test",
