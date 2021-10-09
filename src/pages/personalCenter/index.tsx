@@ -21,6 +21,7 @@ import ColTitles from "@components/Title/ColTitles";
 import logout from '../../assets/personalCenter/logout.png';
 import useResize from "@hooks/useResize";
 import BasicInfo from "@pages/personalCenter/components/BasicInfo";
+import ChangePassword from "@pages/personalCenter/components/ChangePassword";
 
 const {TabPane} = Tabs;
 const MyTable: React.FC<Props> = () => {
@@ -36,10 +37,10 @@ const MyTable: React.FC<Props> = () => {
 			<div className={styles.content} style={{height: bodyHeight}}>
 				<Tabs tabPosition={`left`} className={styles.tabs}>
 					<TabPane tab={<TabTitle icon={`basic`} title={`基础资料`}/>} key="basic">
-						<BasicInfo />
+						<BasicInfo/>
 					</TabPane>
 					<TabPane tab={<TabTitle icon={`changePassword`} title={`修改密码`}/>} key="changePassword">
-						Content of Tab 2
+						<ChangePassword/>
 					</TabPane>
 					<TabPane tab={<TabTitle icon={`mySettings`} title={`基础资料`}/>} key="mySettings">
 						Content of Tab 3
