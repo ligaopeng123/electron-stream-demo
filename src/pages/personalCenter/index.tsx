@@ -10,8 +10,6 @@
  *
  **********************************************************************/
 import React, {useReducer} from 'react';
-import MyTableTable from "./components/MyTableTable";
-import MyTableModal from "./components/MyTableModal";
 import {reducer, init, State} from "./Store";
 import {Props} from "./typing";
 import {Card, Col, Row, Tabs} from "antd";
@@ -23,6 +21,7 @@ import useResize from "@hooks/useResize";
 import BasicInfo from "@pages/personalCenter/components/BasicInfo";
 import ChangePassword from "@pages/personalCenter/components/ChangePassword";
 import MySettings from "@pages/personalCenter/components/MySettings";
+import AboutUs from "@pages/personalCenter/components/AboutUs";
 
 const {TabPane} = Tabs;
 const MyTable: React.FC<Props> = () => {
@@ -53,7 +52,7 @@ const MyTable: React.FC<Props> = () => {
 						Content of Tab 3
 					</TabPane>
 					<TabPane tab={<TabTitle icon={`aboutUs`} title={`关于我们`}/>} key="aboutUs">
-						Content of Tab 3
+						<AboutUs/>
 					</TabPane>
 				</Tabs>
 			</div>

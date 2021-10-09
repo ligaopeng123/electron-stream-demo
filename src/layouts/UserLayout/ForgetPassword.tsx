@@ -18,6 +18,6 @@ const ForgetPassword: React.FC<any> = (props: any) => {
 			<Register leftImage={`/assets/forgetPassword.png`} title={`忘记密码`} description={`请按照提示设置新密码`}/>
 		</React.Fragment>
 	)
-}
+};
 
 export default ForgetPassword;

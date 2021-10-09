@@ -18,6 +18,6 @@ const UserRegister: React.FC<any> = (props: any) => {
 			<Register leftImage={`/assets/register.png`} title={`注册账号`} description={`请按照提示填写注册信息`}/>
 		</React.Fragment>
 	)
-}
+};
 
 export default UserRegister;
