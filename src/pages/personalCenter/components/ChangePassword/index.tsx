@@ -13,8 +13,6 @@ import React, {useState, useEffect} from 'react';
 import styles from './index.module.less';
 import {Button, Form, Input, Row} from "antd";
 
-import bg from '../../../../assets/personalCenter/changePassword/bg.png';
-
 type ChangePasswordProps = {};
 const ChangePassword: React.FC<ChangePasswordProps> = (props) => {
 	return (
