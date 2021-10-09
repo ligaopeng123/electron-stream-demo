@@ -12,6 +12,7 @@ import AdvertisingSpace from "@pages/teachingCenter/components/AdvertisingSpace"
 import useResize from "@hooks/useResize";
 import Tabs1 from "@components/Tabs1";
 import styles from './styles.module.less';
+import WantToUpload from "@pages/teachingCenter/components/WantToUpload";
 
 const {TabPane} = Tabs;
 
@@ -34,9 +35,11 @@ const TeachingCenter = () => {
 				<Col span={18}>
 					<Tabs1 height={bodyHeight}>
 						<TabPane tab="教学资源" key="1">
+							<WantToUpload/>
 							<EducationResources state={state} dispatch={dispatch} height={bodyHeight}/>
 						</TabPane>
 						<TabPane tab="教学设计" key="2">
+							<WantToUpload/>
 							<InstructionalDesign state={state} dispatch={dispatch}/>
 						</TabPane>
 					</Tabs1>
