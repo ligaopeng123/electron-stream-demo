@@ -1,0 +1,122 @@
+.bg {
+    background-image: url("../../../../assets/personalCenter/baseInfo/bg.png");
+    height: 220px;
+    background-size: 100% 100%;
+
+    .user {
+        display: flex;
+        padding: 24px;
+        border-bottom: 1px solid #2E3743;
+        margin: 0px 24px;
+        align-items: center;
+
+        .center {
+            padding-left: 24px;
+
+            .text {
+                font-size: 16px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #FFFFFF;
+                line-height: 22px;
+
+                padding-bottom: 12px;
+            }
+
+            .info {
+                font-size: 16px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #F5C76E;
+                line-height: 22px;
+            }
+        }
+
+        .bth {
+            color: rgba(139, 80, 15, 1);
+            width: 126px;
+            height: 42px;
+            background: linear-gradient(90deg, #FFDB8B 0%, #F7C95C 100%);
+            border-radius: 21px;
+            text-align: center;
+            line-height: 42px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+
+    .auth {
+        padding-top: 24px;
+        display: flex;
+        align-items: center;
+        margin: 0 24px;
+
+        .label {
+            color: #ffffff;
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            line-height: 22px;
+        }
+
+        .input {
+            margin: 0 24px;
+            width: 70%;
+            background: #F0F2F9;
+            border-radius: 8px;
+            opacity: 0.15;
+        }
+
+        .getBth {
+            background: #4B5462;
+            border-radius: 8px;
+            color: #fff;
+            border-width: 0px !important;
+            margin-left: auto;
+            padding: 0px 24px;
+        }
+    }
+}
+
+.cfg {
+    background: #EBEBEB;
+
+    :global .ant-tabs-nav {
+        background-color: rgba(0, 0, 0, 0) !important;
+        border-radius: 0px !important;
+
+        &:before {
+            border-bottom: 0px solid #f0f0f0 !important;
+        }
+
+        :global .ant-tabs-nav-list {
+            width: 100% !important;
+
+            :global .ant-tabs-tab {
+                width: 50%;
+                justify-content: center;
+            }
+            :global .ant-tabs-tab-active {
+                background-color: #ffffff00 !important;
+            }
+        }
+    }
+
+    :global .ant-tabs-content-holder {
+        background-color: rgba(0, 0, 0, 0) !important;
+        border-radius: 0px !important;
+    }
+
+    .authCode {
+        background-size: 100% 100%;
+        background-image: url("../../../../assets/personalCenter/baseInfo/personal_bg.png");
+        height: 400px;
+    }
+
+    .personal {
+        background-size: 100% 100%;
+        background-image: url("../../../../assets/personalCenter/baseInfo/authCode_bg.png");
+        height: 400px;
+    }
+
+}

@@ -15,7 +15,7 @@ import styles from './ColTitles.module.less';
 const ColTitles: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
-			<div className={styles.title}>{props.children}</div>
+			<div style={props.style} className={styles.title}>{props.children}</div>
 		</React.Fragment>
 	)
 };
