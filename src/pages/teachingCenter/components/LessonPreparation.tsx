@@ -11,10 +11,12 @@
  **********************************************************************/
 import React, {useState, useEffect} from 'react';
 import {Button, Card} from "antd";
-import styles from './LessonPreparation.module.less';
-import lrIcon from '../../../assets/teachingCenter/lesson _reparation.png';
+import DragList from "@components/DragList";
+import LessonPreparationItem from "@pages/teachingCenter/components/LessonPreparationItem";
 import emptyIcon from '../../../assets/teachingCenter/empty2.png';
+import lrIcon from '../../../assets/teachingCenter/lesson _reparation.png';
 import Empty1 from "@components/Empty1";
+import styles from './LessonPreparation.module.less';
 
 const LessonPreparation: React.FC<any> = (props: any) => {
 	return (
@@ -25,8 +27,12 @@ const LessonPreparation: React.FC<any> = (props: any) => {
 			</React.Fragment>
 		}
 		      extra={<Button className={styles.bth} shape="round">开始上课</Button>}
-		      bodyStyle={{height: '100%'}}
+		      bodyStyle={{height: 'calc(100% - 109px)', overflowY: 'auto', padding: 12}}
+		      actions={[
+			      <div>点击 给上课课件排序</div>
+		      ]}
 		>
+			<DragList itemContent={<LessonPreparationItem/>}/>
 			{/*<Empty1 imageStyle={{height: '100%'}} empty={emptyIcon}>暂无备课记录 请前往左侧添加</Empty1>*/}
 		</Card>
 	)

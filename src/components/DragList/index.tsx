@@ -9,7 +9,7 @@
  * @date: 2021/10/9 8:26
  *
  **********************************************************************/
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, ReactNode} from 'react';
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 import styles from './index.module.less';
 
@@ -18,40 +18,41 @@ const reorder = (list: any[], startIndex: number, endIndex: number) => {
 	const result = Array.from(list);
 	const [removed] = result.splice(startIndex, 1);
 	result.splice(endIndex, 0, removed);
-	
 	return result;
 };
 
-const getItems = (count: number): any[] =>
-	Array.from({length: count}, (v, k) => k).map(k => ({
+const getItems = (count: number, content?: any): any[] => {
+	return Array.from({length: count}, (v, k) => k).map(k => ({
 		id: `item-${k}`,
-		content: `item ${k}`
+		content: content || `item ${k}`
 	}));
+};
+
 
 const grid = 8;
 
 const getListStyle = (isDraggingOver: boolean) => ({
-	background: isDraggingOver ? "lightblue" : "lightgrey",
+	background: isDraggingOver ? "lightblue" : "#fff",
 	padding: grid,
-	width: 250
+	width: '100%'
 });
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
 	// some basic styles to make the items look a bit nicer
 	userSelect: "none",
-	padding: grid * 2,
+	padding: 0,
 	margin: `0 0 ${grid}px 0`,
-	
 	// change background colour if dragging
-	background: isDragging ? "lightgreen" : "grey",
-	
+	background: isDragging ? "lightgreen" : "#fff",
 	// styles we need to apply on draggables
 	...draggableStyle
 });
 
-type DragListProps = {};
+type DragListProps = {
+	itemContent?: string | ReactNode
+};
 const DragList: React.FC<DragListProps> = (props) => {
-	const [items, setItems] = useState(getItems(10));
+	const [items, setItems] = useState(getItems(10, props?.itemContent));
 	const onDragEnd = (result: any) => {
 		// dropped outside the list
 		if (!result.destination) {
