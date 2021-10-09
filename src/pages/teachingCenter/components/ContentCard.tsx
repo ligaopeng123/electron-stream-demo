@@ -43,7 +43,7 @@ const ContentCard: React.FC<ContentCardProps> = (props) => {
 				hoverable
 				className={styles.contentCard}
 				style={{minWidth: 240}}
-				cover={<img alt="example" src="/assets/teaching.png"/>}
+				cover={<img alt="example" src="./assets/teaching.png"/>}
 			>
 				<Meta title="资源名称" description="示范课｜视频"/>
 				{

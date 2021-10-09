@@ -61,11 +61,11 @@ const TeacherTraining: React.FC<{}> = (props: any) => {
 			selName: item.name,
 		})
 		setFocusFlag(false)
-	}; 
+	};
 
 	const focusSearch = () => {
 		setFocusFlag(true)
-	}; 
+	};
 
 
     return (
@@ -75,18 +75,18 @@ const TeacherTraining: React.FC<{}> = (props: any) => {
 					<Input placeholder='搜索想要的内容' style={{ marginBottom: 8, display: 'block'}}/>
 				</div> : ''}
 				<div className={styles.tabs}>
-					{tempData.map((item)=><div onClick={()=>tabChange(item)} 
+					{tempData.map((item)=><div onClick={()=>tabChange(item)}
 					className={styles.tabPart+' '+((item.id === trainState.selId )? styles.selTab : '')} key={item.id}>{item.name}</div>)}
 					
 					{!focusFlag ? <div className={styles.rightCls}>
 						<Input onClick={focusSearch} placeholder='搜索想要的内容' style={{width: 188, marginBottom: 8, display: 'block'}}/>
 					</div> : ''}
-				</div>	
-				{trainState.selId == '1' ? <Recommend moreClick={tabChange} /> : 
+				</div>
+				{trainState.selId == '1' ? <Recommend moreClick={tabChange} /> :
 				<div>
 					<div className={styles.subTabs}>
 						<div className={styles.label}>排序</div>
-						{tempData2.map((item)=><div onClick={()=>tabChange(item)} 
+						{tempData2.map((item)=><div onClick={()=>tabChange(item)}
 						className={styles.tabPart+' '+((item.id === trainState.selId )? styles.selTab : '')} key={item.id}>{item.name}</div>)}
 						
 					</div>
@@ -95,7 +95,7 @@ const TeacherTraining: React.FC<{}> = (props: any) => {
 								hoverable
 								className={styles.contentCard}
 								style={{width: 254,marginLeft: index !==0 ? 14 : 0,borderRadius:4}}
-								cover={<img alt="example" src="/assets/teaching.png"/>}
+								cover={<img alt="example" src="./assets/teaching.png"/>}
 							>
 							<Meta avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
 								title="直播培训标题：例如小学科学四年级湖北" description="直播培训标题：例如小学科学四年级湖北" />

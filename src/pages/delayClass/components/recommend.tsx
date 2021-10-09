@@ -50,7 +50,7 @@ const Recommend: React.FC<RecommendProps> = (props) => {
 			selId: item.id,
 			selName: item.name
 		})
-	}; 
+	};
 
     return (
         <React.Fragment>
@@ -67,7 +67,7 @@ const Recommend: React.FC<RecommendProps> = (props) => {
 						hoverable
 						className={styles.contentCard}
 						style={{width: '50%',marginLeft: index !==0 ? 14 : 0,borderRadius:4}}
-						cover={<img alt="example" src="/assets/teaching.png"/>}
+						cover={<img alt="example" src="./assets/teaching.png"/>}
 					>
 						<Meta avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
 							title="直播培训标题：例如小学科学四年级湖北" description="直播培训标题：例如小学科学四年级湖北" />
@@ -85,13 +85,13 @@ const Recommend: React.FC<RecommendProps> = (props) => {
 						hoverable
 						className={styles.contentCard}
 						style={{width: '24%',marginLeft: index !==0 ? 14 : 0,borderRadius:4}}
-						cover={<img alt="example" src="/assets/teaching.png"/>}
+						cover={<img alt="example" src="./assets/teaching.png"/>}
 					>
 						<Meta avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
 							title="直播培训标题：例如小学科学四年级湖北" description="直播培训标题：例如小学科学四年级湖北" />
 					</Card>))}
 				</div>
-			</div> 
+			</div>
         </React.Fragment>
     )
 }
