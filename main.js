@@ -24,7 +24,7 @@ function createWindow() {
 	});
 	
 	// and load the index.html of the app. http://localhost:9001/
-	// 环境管理
+	// 环境管理 编译环境判断不了process.env.REACT_APP_ENV
 	if (process.env.REACT_APP_ENV !== 'production') {
 		mainWindow.loadURL('http://localhost:9001/');
 		// mainWindow.webContents.openDevTools();
