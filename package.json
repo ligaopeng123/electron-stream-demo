@@ -9,7 +9,7 @@
   "build": {
     "productName": "kemi",
     "copyright": "kemi",
-    "appId": "com.wss.app",
+    "appId": "com.kemi.app",
     "directories": {
       "output": "builder"
     },
