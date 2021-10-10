@@ -15,7 +15,7 @@ import Register from "@/layouts/UserLayout/components/Register";
 const UserRegister: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
-			<Register leftImage={`/assets/register.png`} title={`注册账号`} description={`请按照提示填写注册信息`}/>
+			<Register leftImage={`./assets/register.png`} title={`注册账号`} description={`请按照提示填写注册信息`}/>
 		</React.Fragment>
 	)
 };

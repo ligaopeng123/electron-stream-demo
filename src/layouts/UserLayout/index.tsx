@@ -133,7 +133,7 @@ const UserLayout: React.FC<any> = (props: any) => {
 						sm={4}
 						md={7}
 						sx={{
-							backgroundImage: 'url(/assets/login.png)',
+							backgroundImage: 'url(./assets/login.png)',
 							backgroundRepeat: 'no-repeat',
 							// backgroundColor: 'rgba(0,0,0,0)',
 							backgroundSize: 'cover',

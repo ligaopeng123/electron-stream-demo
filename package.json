@@ -1,5 +1,5 @@
 {
-  "name": "react-electron",
+  "name": "kemi",
   "version": "0.1.0",
   "private": false,
   "homepage": ".",
@@ -7,11 +7,14 @@
   "main": "main.js",
   "description": "react + electron",
   "build": {
+    "productName": "kemi",
+    "copyright": "kemi",
     "appId": "com.wss.app",
     "directories": {
       "output": "builder"
     },
     "win": {
+      "icon": "build/favicon.ico",
       "target": [
         "nsis",
         "zip"

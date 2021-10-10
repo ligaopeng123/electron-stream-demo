@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -25,12 +25,12 @@ function createWindow() {
 	
 	// and load the index.html of the app. http://localhost:9001/
 	// 环境管理
-	if (process.env.REACT_APP_ENV === 'production') {
-		mainWindow.loadFile('./build/index.html');
-		mainWindow.webContents.openDevTools();
-	} else {
+	if (process.env.REACT_APP_ENV !== 'production') {
 		mainWindow.loadURL('http://localhost:9001/');
-		mainWindow.webContents.openDevTools();
+		// mainWindow.webContents.openDevTools();
+	} else {
+		mainWindow.loadFile('./build/index.html');
+		// mainWindow.webContents.openDevTools();
 	}
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function () {
@@ -43,20 +43,14 @@ function createWindow() {
 	// mainWindow.webContents.openDevTools()
 }
 
-const ipc = require('electron').ipcMain;
-//接收
-ipc.on('test', function (msg) {
-	console.log(msg)
-});
-
 
 //接收窗口最小化通信
-ipc.on('window-min', () => {
+ipcMain.on('window-min', () => {
 	mainWindow.minimize();
 });
 
 //接收窗口变小（还原到原状态）通信
-ipc.on('window-max', () => {
+ipcMain.on('window-max', () => {
 	if (mainWindow.isMaximized()) {
 		mainWindow.unmaximize();
 	} else {
@@ -65,7 +59,7 @@ ipc.on('window-max', () => {
 });
 
 //接收窗口最大化通信
-ipc.on('window-close', () => {
+ipcMain.on('window-close', () => {
 	mainWindow.close();
 });
 

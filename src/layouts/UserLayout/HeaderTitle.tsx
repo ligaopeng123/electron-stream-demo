@@ -16,7 +16,7 @@ import './styles.less'
 const HeaderTitle: React.FC<any> = (props: any) => {
 	return (
 		<div className={`login-header-title`}>
-			<img className={`drag`} src={'/assets/login_title.png'}/>
+			<img className={`drag`} src={'./assets/login_title.png'}/>
 			<Manipulate min={false} screen={false}/>
 		</div>
 	)

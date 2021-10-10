@@ -15,7 +15,7 @@ import Register from "@/layouts/UserLayout/components/Register";
 const ForgetPassword: React.FC<any> = (props: any) => {
 	return (
 		<React.Fragment>
-			<Register leftImage={`/assets/forgetPassword.png`} title={`忘记密码`} description={`请按照提示设置新密码`}/>
+			<Register leftImage={`./assets/forgetPassword.png`} title={`忘记密码`} description={`请按照提示设置新密码`}/>
 		</React.Fragment>
 	)
 };
